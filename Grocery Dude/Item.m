@@ -2,11 +2,12 @@
 //  Item.m
 //  
 //
-//  Created by yangxu on 15/10/17.
+//  Created by yangxu on 15/10/18.
 //
 //
 
 #import "Item.h"
+#import "Unit.h"
 
 
 @implementation Item
@@ -16,5 +17,6 @@
 @dynamic name;
 @dynamic photoData;
 @dynamic quantity;
+@dynamic units;
 
 @end

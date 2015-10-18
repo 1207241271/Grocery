@@ -69,6 +69,7 @@
 		766477081BD278B4004B9492 /* Model2ToModel4.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = Model2ToModel4.xcmappingmodel; sourceTree = "<group>"; };
 		769A70641BD2735900FB3E60 /* Model 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 4.xcdatamodel"; sourceTree = "<group>"; };
 		769A70651BD2740400FB3E60 /* Model3ToModel4.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; name = Model3ToModel4.xcmappingmodel; path = ../Model3ToModel4.xcmappingmodel; sourceTree = "<group>"; };
+		76CC2C0C1BD330050076ACFA /* Model 5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 5.xcdatamodel"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -512,12 +513,13 @@
 		7619872F1BD2295400320CCC /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				76CC2C0C1BD330050076ACFA /* Model 5.xcdatamodel */,
 				769A70641BD2735900FB3E60 /* Model 4.xcdatamodel */,
 				7619873F1BD22B9300320CCC /* Model 3.xcdatamodel */,
 				761987301BD2295400320CCC /* Model 2.xcdatamodel */,
 				761987311BD2295400320CCC /* Model.xcdatamodel */,
 			);
-			currentVersion = 769A70641BD2735900FB3E60 /* Model 4.xcdatamodel */;
+			currentVersion = 76CC2C0C1BD330050076ACFA /* Model 5.xcdatamodel */;
 			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

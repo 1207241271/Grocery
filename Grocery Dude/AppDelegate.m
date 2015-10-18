@@ -64,31 +64,38 @@
         NSLog(@"Running %@,%@",self.class,NSStringFromSelector(_cmd));
     }
     
+    Unit *kg=[NSEntityDescription insertNewObjectForEntityForName:@"Unit" inManagedObjectContext:[self cdh].context];
+    Item *orange=[NSEntityDescription insertNewObjectForEntityForName:@"Item" inManagedObjectContext:_coreDataHelper.context];
+    Item *banana=[NSEntityDescription insertNewObjectForEntityForName:@"Item" inManagedObjectContext:_coreDataHelper.context];
+    
+    kg.name=@"Kg";
+    orange.units=kg;
+    banana.units=kg;
+    [self showUnitsAndItems];
     
     
     
+    NSFetchRequest *request=[NSFetchRequest fetchRequestWithEntityName:@"Unit"];
+    NSArray *units=[_coreDataHelper.context executeFetchRequest:request error:nil];
+    for (Unit *unit in units) {
+        [_coreDataHelper.context deleteObject:unit];
+        NSLog(@"delete one");
+    }
     
+    [self showUnitsAndItems];
+    [_coreDataHelper saveContext];
     
-//    for (int i=1; i<10000; i++) {
-//        Measurement * new=[NSEntityDescription insertNewObjectForEntityForName:@"Measurement" inManagedObjectContext:_coreDataHelper.context];
-//        new.abc=[NSString stringWithFormat:@"---->> lots of data %i",i];
-//        NSLog(@"%@",new.abc);
-//    }
+}
 
-    NSFetchRequest *request= [NSFetchRequest fetchRequestWithEntityName:@"Unit"];
-    [request setFetchLimit:50];
-    NSError *error;
-    NSArray *fetchObject=[_coreDataHelper.context executeFetchRequest:request error:&error];
+-(void)showUnitsAndItems{
+    NSFetchRequest *unit=[NSFetchRequest fetchRequestWithEntityName:@"Unit"];
+    NSArray *fetchedUnit=[[self cdh].context executeFetchRequest:unit error:nil];
+    NSLog(@"Unit number is %lu",(long unsigned)fetchedUnit.count);
     
-    if (error) {
-        NSLog(@"error: %@",error);
-    }
-    else
-    {
-        for (Unit *measure in fetchObject) {
-            NSLog(@"Amount objects:%@",measure.name);
-        }
-    }
+    NSFetchRequest *items=[NSFetchRequest fetchRequestWithEntityName:@"Item"];
+    NSArray *fetchedItem=[[self cdh].context executeFetchRequest:items error:nil];
+    NSLog(@"Unit number is %lu",(long unsigned)fetchedItem.count);
+    
 }
 
 

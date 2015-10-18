@@ -2,13 +2,14 @@
 //  Item.h
 //  
 //
-//  Created by yangxu on 15/10/17.
+//  Created by yangxu on 15/10/18.
 //
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+@class Unit;
 
 @interface Item : NSManagedObject
 
@@ -17,5 +18,6 @@
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSData * photoData;
 @property (nonatomic, retain) NSNumber * quantity;
+@property (nonatomic, retain) Unit *units;
 
 @end
