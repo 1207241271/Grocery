@@ -10,14 +10,14 @@
 	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>0AB09F5DFC8A03324B15F6CE1F2261F3B651CAB0</key>
+		<key>77B275EC999AD5503060099746691D7A9AB5490D</key>
 		<string>https://github.com/1207241271/Grocery.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Grocery Dude.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>0AB09F5DFC8A03324B15F6CE1F2261F3B651CAB0</key>
+		<key>77B275EC999AD5503060099746691D7A9AB5490D</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -25,16 +25,16 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>0AB09F5DFC8A03324B15F6CE1F2261F3B651CAB0</string>
+	<string>77B275EC999AD5503060099746691D7A9AB5490D</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>0AB09F5DFC8A03324B15F6CE1F2261F3B651CAB0</string>
+			<string>77B275EC999AD5503060099746691D7A9AB5490D</string>
 			<key>IDESourceControlWCCName</key>
-			<string>Grocery%20Dude</string>
+			<string>Grocery</string>
 		</dict>
 	</array>
 </dict>
