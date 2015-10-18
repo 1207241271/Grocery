@@ -132,8 +132,10 @@ NSString *storeFilename = @"Grocery-Dude.sqlit";
         if ([_context save:&error]) {
             NSLog(@"SAVE successfully");
         }
-        else
+        else{
             NSLog(@"Fail to save _context,error:%@",error);
+            [self showValidationError:error];
+        }
     }
 }
 
@@ -300,6 +302,72 @@ NSString *storeFilename = @"Grocery-Dude.sqlit";
     });
 }
 
+#pragma mark - VALIDATION ERROR HANDLING
+-(void)showValidationError:(NSError *)error{
+    if (error&&[error.domain isEqualToString:@"NSCocoaErrorDomain"]) {
+        NSArray *errors;
+        NSString *text=@"";
+        if (error.code==NSValidationMultipleErrorsError) {
+            errors=[error.userInfo objectForKey:NSDetailedErrorsKey];
+        }
+        else
+            errors=[NSArray arrayWithObject:error];
+        if (errors&&errors.count>0) {
+            for (NSError *error in errors) {
+                NSString *entity=[[[error.userInfo objectForKey:@"NSValidationErrorObject"]entity]name];
+                NSString *property=[error.userInfo objectForKey:@"NSValidationErrorKey"];
+                switch (error.code) {
+                    case NSValidationRelationshipDeniedDeleteError:
+                        text=[text stringByAppendingFormat:@"%@ delere was denied %@\n(Error  code%li)\n\n",entity,property,(long)error.code];
+                        break;
+                    case NSManagedObjectValidationError:
+                        text=[text stringByAppendingFormat:@"the %@ generic validation error (code %li)",property,(long)error.code];
+                        break;
+                    case NSValidationStringTooShortError:
+                        text=[text stringByAppendingFormat:@"the %@ some string value fails to match some pattern (code %li)",property,(long)error.code];
+                        break;
+                    case NSValidationStringPatternMatchingError:
+                        text=[text stringByAppendingFormat:@"the %@ some string value is too short (code %li)",property,(long)error.code];
+                        break;
+                    case NSValidationStringTooLongError:
+                        text=[text stringByAppendingFormat:@"the %@ some string value is too long (code %li)",property,(long)error.code];
+                        break;
+                    case NSValidationInvalidDateError:
+                        text=[text stringByAppendingFormat:@"the %@ some date value fails to match date pattern  (code %li)",property,(long)error.code];
+                        break;
+                    case NSValidationDateTooSoonError:
+                        text=[text stringByAppendingFormat:@"the %@ some date value is too soon (code %li)",property,(long)error.code];
+                        break;
+                    case NSValidationDateTooLateError:
+                        text=[text stringByAppendingFormat:@"the %@ some date value is too late (code %li)",property,(long)error.code];
+                        break;
+                    case NSValidationNumberTooSmallError:
+                        text=[text stringByAppendingFormat:@"the %@ some numerical value is too small (code %li)",property,(long)error.code];
+                        break;
+                    case NSValidationNumberTooLargeError:
+                        text=[text stringByAppendingFormat:@"the %@ some numerical value is too large (code %li)",property,(long)error.code];
+                        break;
+                    case NSValidationRelationshipExceedsMaximumCountError:
+                        text=[text stringByAppendingFormat:@"the %@ bounded, to-many relationship with too many destination objects  (code %li)",property,(long)error.code];
+                        break;
+                    case NSValidationRelationshipLacksMinimumCountError:
+                        text=[text stringByAppendingFormat:@"the %@ to-many relationship with too few destination objects (code %li)",property,(long)error.code];
+                        break;
+                    case NSValidationMissingMandatoryPropertyError:
+                        text=[text stringByAppendingFormat:@"the %@ non-optional property with a nil value  (code %li)",property,(long)error.code];
+                        break;
+                    default:
+                        text=[text stringByAppendingFormat:@"Unhandled error %li",(long)error.code];
+                        break;
+
+                }
+            }
+        }
+    }
+    
+    
+    
+}
 
 
 @end

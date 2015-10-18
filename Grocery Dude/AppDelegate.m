@@ -78,8 +78,16 @@
     NSFetchRequest *request=[NSFetchRequest fetchRequestWithEntityName:@"Unit"];
     NSArray *units=[_coreDataHelper.context executeFetchRequest:request error:nil];
     for (Unit *unit in units) {
-        [_coreDataHelper.context deleteObject:unit];
-        NSLog(@"delete one");
+        
+        
+        NSError *error;
+        if ([unit validateForDelete:&error]) {
+            [_coreDataHelper.context deleteObject:unit];
+            NSLog(@"delete one");
+        }
+        else{
+            NSLog(@"error :%@",error);
+        }
     }
     
     [self showUnitsAndItems];
