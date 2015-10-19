@@ -20,6 +20,6 @@
 @property (nonatomic, retain) NSNumber * quantity;
 @property (nonatomic, retain) LocationAtHome *locationAtHome;
 @property (nonatomic, retain) LocationAtShop *locationAtShop;
-@property (nonatomic, retain) Unit *units;
+@property (nonatomic, retain) Unit *unit;
 
 @end

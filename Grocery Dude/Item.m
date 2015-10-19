@@ -21,6 +21,6 @@
 @dynamic quantity;
 @dynamic locationAtHome;
 @dynamic locationAtShop;
-@dynamic units;
+@dynamic unit;
 
 @end
