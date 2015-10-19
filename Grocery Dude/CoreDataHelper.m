@@ -86,14 +86,14 @@ NSString *storeFilename = @"Grocery-Dude.sqlit";
     }
     
     
-    BOOL useMigrationManager=NO;
+    BOOL useMigrationManager=YES;
     if (useMigrationManager&&[self isMigrationNecessaryForStore:[self storeURL]]) {
         [self performBackgroundManagedMigrationForStore:[self storeURL]];
     }
     else{
         NSDictionary *options=@{
                             NSMigratePersistentStoresAutomaticallyOption:@YES,
-                            NSInferMappingModelAutomaticallyOption:@NO,
+                            NSInferMappingModelAutomaticallyOption:@YES,
                             NSSQLitePragmasOption: @{@"journal_mode": @"DELETE"}};
     
         NSError* error;
@@ -303,22 +303,22 @@ NSString *storeFilename = @"Grocery-Dude.sqlit";
 }
 
 #pragma mark - VALIDATION ERROR HANDLING
--(void)showValidationError:(NSError *)error{
-    if (error&&[error.domain isEqualToString:@"NSCocoaErrorDomain"]) {
+-(void)showValidationError:(NSError *)anError{
+    if (anError&&[anError.domain isEqualToString:@"NSCocoaErrorDomain"]) {
         NSArray *errors;
         NSString *text=@"";
-        if (error.code==NSValidationMultipleErrorsError) {
-            errors=[error.userInfo objectForKey:NSDetailedErrorsKey];
+        if (anError.code==NSValidationMultipleErrorsError) {
+            errors=[anError.userInfo objectForKey:NSDetailedErrorsKey];
         }
         else
-            errors=[NSArray arrayWithObject:error];
+            errors=[NSArray arrayWithObject:anError];
         if (errors&&errors.count>0) {
             for (NSError *error in errors) {
                 NSString *entity=[[[error.userInfo objectForKey:@"NSValidationErrorObject"]entity]name];
                 NSString *property=[error.userInfo objectForKey:@"NSValidationErrorKey"];
                 switch (error.code) {
                     case NSValidationRelationshipDeniedDeleteError:
-                        text=[text stringByAppendingFormat:@"%@ delere was denied %@\n(Error  code%li)\n\n",entity,property,(long)error.code];
+                        text=[text stringByAppendingFormat:@"%@ delete was denied %@\n(Error  code%li)\n\n",entity,property,(long)error.code];
                         break;
                     case NSManagedObjectValidationError:
                         text=[text stringByAppendingFormat:@"the %@ generic validation error (code %li)",property,(long)error.code];
@@ -363,8 +363,10 @@ NSString *storeFilename = @"Grocery-Dude.sqlit";
                 }
             }
         }
+        UIAlertView *alertView=[[UIAlertView alloc]initWithTitle:@"Validation Error" message:text delegate:self cancelButtonTitle:nil otherButtonTitles: nil];
+        [alertView show];
     }
-    
+
     
     
 }

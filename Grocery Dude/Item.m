@@ -2,11 +2,13 @@
 //  Item.m
 //  
 //
-//  Created by yangxu on 15/10/18.
+//  Created by yangxu on 15/10/19.
 //
 //
 
 #import "Item.h"
+#import "LocationAtHome.h"
+#import "LocationAtShop.h"
 #import "Unit.h"
 
 
@@ -17,6 +19,8 @@
 @dynamic name;
 @dynamic photoData;
 @dynamic quantity;
+@dynamic locationAtHome;
+@dynamic locationAtShop;
 @dynamic units;
 
 @end

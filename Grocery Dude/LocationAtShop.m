@@ -1,18 +1,18 @@
 //
-//  Unit.m
+//  LocationAtShop.m
 //  
 //
 //  Created by yangxu on 15/10/19.
 //
 //
 
-#import "Unit.h"
+#import "LocationAtShop.h"
 #import "Item.h"
 
 
-@implementation Unit
+@implementation LocationAtShop
 
-@dynamic name;
+@dynamic aisle;
 @dynamic items;
 
 @end

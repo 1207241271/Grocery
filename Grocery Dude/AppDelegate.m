@@ -63,24 +63,25 @@
     if (debug==1) {
         NSLog(@"Running %@,%@",self.class,NSStringFromSelector(_cmd));
     }
-    
-    Unit *kg=[NSEntityDescription insertNewObjectForEntityForName:@"Unit" inManagedObjectContext:[self cdh].context];
-    Item *orange=[NSEntityDescription insertNewObjectForEntityForName:@"Item" inManagedObjectContext:_coreDataHelper.context];
-    Item *banana=[NSEntityDescription insertNewObjectForEntityForName:@"Item" inManagedObjectContext:_coreDataHelper.context];
-    
-    kg.name=@"Kg";
-    orange.units=kg;
-    banana.units=kg;
-    [self showUnitsAndItems];
-    
-    
-    
+//    
+//    Unit *kg=[NSEntityDescription insertNewObjectForEntityForName:@"Unit" inManagedObjectContext:[self cdh].context];
+//    Item *orange=[NSEntityDescription insertNewObjectForEntityForName:@"Item" inManagedObjectContext:_coreDataHelper.context];
+//    Item *banana=[NSEntityDescription insertNewObjectForEntityForName:@"Item" inManagedObjectContext:_coreDataHelper.context];
+//    
+//    kg.name=@"Kg";
+//    orange.units=kg;
+//    banana.units=kg;
+//    [self showUnitsAndItems];
+//    
+//    
+//    
     NSFetchRequest *request=[NSFetchRequest fetchRequestWithEntityName:@"Unit"];
-    NSArray *units=[_coreDataHelper.context executeFetchRequest:request error:nil];
+    NSArray *units=[[self cdh].context executeFetchRequest:request error:nil];
     for (Unit *unit in units) {
         
         
         NSError *error;
+        //验证是否可以删除
         if ([unit validateForDelete:&error]) {
             [_coreDataHelper.context deleteObject:unit];
             NSLog(@"delete one");
@@ -102,7 +103,7 @@
     
     NSFetchRequest *items=[NSFetchRequest fetchRequestWithEntityName:@"Item"];
     NSArray *fetchedItem=[[self cdh].context executeFetchRequest:items error:nil];
-    NSLog(@"Unit number is %lu",(long unsigned)fetchedItem.count);
+    NSLog(@"items number is %lu",(long unsigned)fetchedItem.count);
     
 }
 

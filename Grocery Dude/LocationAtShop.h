@@ -1,5 +1,5 @@
 //
-//  Unit.h
+//  LocationAtShop.h
 //  
 //
 //  Created by yangxu on 15/10/19.
@@ -8,16 +8,17 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import "Location.h"
 
 @class Item;
 
-@interface Unit : NSManagedObject
+@interface LocationAtShop : Location
 
-@property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSString * aisle;
 @property (nonatomic, retain) NSSet *items;
 @end
 
-@interface Unit (CoreDataGeneratedAccessors)
+@interface LocationAtShop (CoreDataGeneratedAccessors)
 
 - (void)addItemsObject:(Item *)value;
 - (void)removeItemsObject:(Item *)value;
