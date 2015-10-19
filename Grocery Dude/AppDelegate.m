@@ -52,7 +52,11 @@
     }
     
     if (!_coreDataHelper) {
-        _coreDataHelper=[[CoreDataHelper alloc]init];
+        //在生命周期中只执行一次
+        static dispatch_once_t predicate;
+        dispatch_once(&predicate,^{
+            _coreDataHelper=[[CoreDataHelper alloc]init];
+        });
         [_coreDataHelper setupCoreData];
     }
     

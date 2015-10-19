@@ -29,6 +29,7 @@
 		7666206A1BD4B1BA001130C9 /* Model5ToModel6.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 766620691BD4B1BA001130C9 /* Model5ToModel6.xcmappingmodel */; };
 		7666206E1BD4B5E0001130C9 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7666206D1BD4B5E0001130C9 /* CoreDataTableViewController.m */; };
 		769A70661BD2740400FB3E60 /* Model3ToModel4.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 769A70651BD2740400FB3E60 /* Model3ToModel4.xcmappingmodel */; };
+		76DDF9231BD4CD18004FA34D /* PrepareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76DDF9221BD4CD18004FA34D /* PrepareViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,8 @@
 		769A70641BD2735900FB3E60 /* Model 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 4.xcdatamodel"; sourceTree = "<group>"; };
 		769A70651BD2740400FB3E60 /* Model3ToModel4.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; name = Model3ToModel4.xcmappingmodel; path = ../Model3ToModel4.xcmappingmodel; sourceTree = "<group>"; };
 		76CC2C0C1BD330050076ACFA /* Model 5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 5.xcdatamodel"; sourceTree = "<group>"; };
+		76DDF9211BD4CD18004FA34D /* PrepareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrepareViewController.h; sourceTree = "<group>"; };
+		76DDF9221BD4CD18004FA34D /* PrepareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrepareViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +132,7 @@
 				7619874C1BD232D000320CCC /* View Controllers */,
 				7619874B1BD232B900320CCC /* Model */,
 				7666206B1BD4B578001130C9 /* Generic Core Data Classes */,
+				76DDF9201BD4CCD0004FA34D /* Grocery Dude TableView Controller */,
 				7619872E1BD228F900320CCC /* CoreDataHelper */,
 				761987391BD229D900320CCC /* ViewController.h */,
 				7619873A1BD229D900320CCC /* ViewController.m */,
@@ -219,6 +223,15 @@
 				7666206D1BD4B5E0001130C9 /* CoreDataTableViewController.m */,
 			);
 			name = "Generic Core Data Classes";
+			sourceTree = "<group>";
+		};
+		76DDF9201BD4CCD0004FA34D /* Grocery Dude TableView Controller */ = {
+			isa = PBXGroup;
+			children = (
+				76DDF9211BD4CD18004FA34D /* PrepareViewController.h */,
+				76DDF9221BD4CD18004FA34D /* PrepareViewController.m */,
+			);
+			name = "Grocery Dude TableView Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,6 +341,7 @@
 				766620681BD4AF34001130C9 /* Location.m in Sources */,
 				761987321BD2295400320CCC /* Model.xcdatamodeld in Sources */,
 				7666206A1BD4B1BA001130C9 /* Model5ToModel6.xcmappingmodel in Sources */,
+				76DDF9231BD4CD18004FA34D /* PrepareViewController.m in Sources */,
 				766620671BD4AF34001130C9 /* LocationAtHome.m in Sources */,
 				7619872D1BD228EC00320CCC /* CoreDataHelper.m in Sources */,
 				766477091BD278B4004B9492 /* Model2ToModel4.xcmappingmodel in Sources */,
