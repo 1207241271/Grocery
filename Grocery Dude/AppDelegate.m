@@ -67,37 +67,32 @@
     if (debug==1) {
         NSLog(@"Running %@,%@",self.class,NSStringFromSelector(_cmd));
     }
+ 
+//    CoreDataHelper *cdh=[self cdh];
+//    NSArray *homeLoactions=[NSArray arrayWithObjects:@"Fruit Bowl",@"Pantry",@"Nursery",@"Bathroom",@"fridge", nil];
+//    NSArray *shopLocations=[NSArray arrayWithObjects:@"produce",@"Aisle1",@"Aisle2",@"Aisle3",@"Deli", nil];
+//    NSArray *unitNames=[NSArray arrayWithObjects:@"g",@"pkt",@"box",@"ml",@"kg", nil];
+//    NSArray *itemNames=[NSArray arrayWithObjects:@"Grapes",@"Biscuits",@"Nappies",@"Shampoo",@"Sausage", nil];
 //    
-//    Unit *kg=[NSEntityDescription insertNewObjectForEntityForName:@"Unit" inManagedObjectContext:[self cdh].context];
-//    Item *orange=[NSEntityDescription insertNewObjectForEntityForName:@"Item" inManagedObjectContext:_coreDataHelper.context];
-//    Item *banana=[NSEntityDescription insertNewObjectForEntityForName:@"Item" inManagedObjectContext:_coreDataHelper.context];
+//    int i=0;
+//    for (NSString *itemName in itemNames) {
+//        LocationAtHome *locationAtHome=[NSEntityDescription insertNewObjectForEntityForName:@"LocationAtHome" inManagedObjectContext:cdh.context];
+//        LocationAtShop *locationAtShop=[NSEntityDescription insertNewObjectForEntityForName:@"LocationAtShop" inManagedObjectContext:cdh.context];
+//        Unit *unit=[NSEntityDescription insertNewObjectForEntityForName:@"Unit" inManagedObjectContext:cdh.context];
+//        Item *item=[NSEntityDescription insertNewObjectForEntityForName:@"Item" inManagedObjectContext:cdh.context];
+//        locationAtHome.storeIn=[homeLoactions objectAtIndex:i];
+//        locationAtShop.aisle=[shopLocations objectAtIndex:i];
+//        unit.name=[unitNames objectAtIndex:i];
+//        item.name=[itemNames objectAtIndex:i];
+//        
+//        item.unit=unit;
+//        item.locationAtHome=locationAtHome;
+//        item.locationAtShop=locationAtShop;
+//        
+//        i++;
+//    }
+//    [cdh saveContext];
 //    
-//    kg.name=@"Kg";
-//    orange.units=kg;
-//    banana.units=kg;
-//    [self showUnitsAndItems];
-//    
-//    
-//    
-    NSFetchRequest *request=[NSFetchRequest fetchRequestWithEntityName:@"Unit"];
-    NSArray *units=[[self cdh].context executeFetchRequest:request error:nil];
-    for (Unit *unit in units) {
-        
-        
-        NSError *error;
-        //验证是否可以删除
-        if ([unit validateForDelete:&error]) {
-            [_coreDataHelper.context deleteObject:unit];
-            NSLog(@"delete one");
-        }
-        else{
-            NSLog(@"error :%@",error);
-        }
-    }
-    
-    [self showUnitsAndItems];
-    [_coreDataHelper saveContext];
-    
 }
 
 -(void)showUnitsAndItems{

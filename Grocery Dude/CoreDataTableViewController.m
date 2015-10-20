@@ -58,7 +58,7 @@
     if (debug==1) {
         NSLog(@"Running %@ '%@'",self.class,NSStringFromSelector(_cmd));
     }
-    return [[_fetchedResultController.sections objectAtIndex:section] numberOfSections];
+    return [[_fetchedResultController.sections objectAtIndex:section] numberOfObjects];
 }
 
 -(NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index{

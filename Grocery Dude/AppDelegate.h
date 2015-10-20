@@ -10,6 +10,8 @@
 #import "CoreDataHelper.h"
 #import "Item.h"
 #import "Unit.h"
+#import "LocationAtHome.h"
+#import "LocationAtShop.h"
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow                      *window;

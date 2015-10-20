@@ -51,7 +51,7 @@
     }
     else{
         cell.textLabel.font=[UIFont systemFontOfSize:36];
-        cell.textLabel.textColor=[UIColor yellowColor];
+        cell.textLabel.textColor=[UIColor grayColor];
     }
     
     return cell;
@@ -59,7 +59,11 @@
 
 
 
-
+-(NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView{
+    
+    
+    return nil;
+}
 
 
 #pragma mark - DATA
@@ -70,13 +74,13 @@
     
     NSFetchRequest *request=[NSFetchRequest fetchRequestWithEntityName:@"Item"];
     
-    request.sortDescriptors=[NSArray arrayWithObjects:[NSSortDescriptor sortDescriptorWithKey:@"locationAtHome.storedIn" ascending:YES],[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES], nil];
+    request.sortDescriptors=[NSArray arrayWithObjects:[NSSortDescriptor sortDescriptorWithKey:@"locationAtHome.storeIn" ascending:YES],[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES], nil];
     [request setFetchBatchSize:50];
     
     CoreDataHelper *cdh=[(AppDelegate *)[[UIApplication sharedApplication]delegate] cdh];
     
     
-    self.fetchedResultController=[[NSFetchedResultsController alloc]initWithFetchRequest:request managedObjectContext:cdh.context sectionNameKeyPath:@"locationAtHome.storedIn" cacheName:nil];
+    self.fetchedResultController=[[NSFetchedResultsController alloc]initWithFetchRequest:request managedObjectContext:cdh.context sectionNameKeyPath:@"locationAtHome.storeIn" cacheName:nil];
     
     self.fetchedResultController.delegate=self;
 }

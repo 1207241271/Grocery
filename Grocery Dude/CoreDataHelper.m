@@ -86,7 +86,7 @@ NSString *storeFilename = @"Grocery-Dude.sqlit";
     }
     
     
-    BOOL useMigrationManager=YES;
+    BOOL useMigrationManager=NO;
     if (useMigrationManager&&[self isMigrationNecessaryForStore:[self storeURL]]) {
         [self performBackgroundManagedMigrationForStore:[self storeURL]];
     }
