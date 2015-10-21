@@ -66,7 +66,7 @@
         <!--Grocery Dude-->
         <scene sceneID="hPF-9p-jaF">
             <objects>
-                <tableViewController title="Grocery Dude" id="2os-o0-pmO" sceneMemberID="viewController">
+                <tableViewController title="Grocery Dude" id="2os-o0-pmO" customClass="ShopTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="zWO-eF-QcS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -87,7 +87,13 @@
                             <outlet property="delegate" destination="2os-o0-pmO" id="tvs-mP-IKl"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="NiK-B4-UrB"/>
+                    <navigationItem key="navigationItem" id="NiK-B4-UrB">
+                        <barButtonItem key="leftBarButtonItem" title="clear" id="EtV-Dq-xUe">
+                            <connections>
+                                <action selector="clear:" destination="2os-o0-pmO" id="rK1-Un-lnN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eBf-Fk-d67" userLabel="First Responder" sceneMemberID="firstResponder"/>
