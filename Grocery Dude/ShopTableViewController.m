@@ -11,6 +11,7 @@
 #import "Item.h"
 #import "Unit.h"
 #import "AppDelegate.h"
+#import "ItemViewController.h"
 @interface ShopTableViewController ()
 
 @end
@@ -109,6 +110,16 @@
         UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"Select item to be removed from list" message:@"Add items using the Prepare tab" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
     }
+}
+
+
+-(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
+    if (debug==1) {
+        NSLog(@"Running %@,%@",self.class,NSStringFromSelector(_cmd));
+    }
+    ItemViewController *itemViewController=[self.storyboard instantiateViewControllerWithIdentifier:@"ItemViewController"];
+    itemViewController.selectedItemID=[[self.fetchedResultController objectAtIndexPath:indexPath] objectID];
+    [self.navigationController pushViewController:itemViewController animated:YES];
 }
 
 @end

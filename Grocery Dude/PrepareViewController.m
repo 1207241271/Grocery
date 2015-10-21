@@ -11,7 +11,7 @@
 #import "Item.h"
 #import "Unit.h"
 #import "AppDelegate.h"
-
+#import "ItemViewController.h"
 @interface PrepareViewController ()
 
 @end
@@ -160,6 +160,35 @@
         item.listed=[NSNumber numberWithBool:NO];
     }
     
+}
+
+#pragma mark - SEGUE
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if (debug==1) {
+        NSLog(@"Running %@,%@",self.class,NSStringFromSelector(_cmd));
+    }
+    ItemViewController *itemViewController=segue.destinationViewController;
+    if ([segue.identifier isEqualToString:@"Add Item Segue"]) {
+        CoreDataHelper *cdh=[(AppDelegate*)[[UIApplication sharedApplication] delegate] cdh];
+        Item *newItem=[NSEntityDescription insertNewObjectForEntityForName:@"Item" inManagedObjectContext:cdh.context];
+        NSError *error;
+        if (![cdh.context obtainPermanentIDsForObjects:[NSArray arrayWithObject:newItem] error:&error]) {
+            NSLog(@"Couldn't obtain a permanent ID  %@",error);
+        }
+        itemViewController.selectedItemID=newItem.objectID;
+    }else{
+        NSLog(@"Unidentified Segue Attempted");
+    }
+}
+
+
+-(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
+    if (debug==1) {
+        NSLog(@"Running %@,%@",self.class,NSStringFromSelector(_cmd));
+    }
+    ItemViewController *itemViewController=[self.storyboard instantiateViewControllerWithIdentifier:@"ItemViewController"];
+    itemViewController.selectedItemID=[[self.fetchedResultController objectAtIndexPath:indexPath] objectID];
+    [self.navigationController pushViewController:itemViewController animated:YES];
 }
 
 @end
