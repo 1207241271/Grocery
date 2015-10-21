@@ -46,11 +46,11 @@
     [title replaceOccurrencesOfString:@"(null)" withString:@"" options:0 range:NSMakeRange(0, [title length])];
     cell.textLabel.text=title;
     if ([item.listed boolValue]==YES) {
-        cell.textLabel.font=[UIFont systemFontOfSize:36];
+        cell.textLabel.font=[UIFont systemFontOfSize:18];
         cell.textLabel.textColor=[UIColor redColor];
     }
     else{
-        cell.textLabel.font=[UIFont systemFontOfSize:36];
+        cell.textLabel.font=[UIFont systemFontOfSize:16];
         cell.textLabel.textColor=[UIColor grayColor];
     }
     
@@ -64,6 +64,37 @@
     
     return nil;
 }
+
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (debug==1) {
+        NSLog(@"Running %@,%@",self.class,NSStringFromSelector(_cmd));
+    }
+    
+    if (editingStyle==UITableViewCellEditingStyleDelete) {
+        Item *deleteTarget=[self.fetchedResultController objectAtIndexPath:indexPath];
+        [self.fetchedResultController.managedObjectContext deleteObject:deleteTarget];
+        [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
+
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (debug==1) {
+        NSLog(@"Running %@,%@",self.class,NSStringFromSelector(_cmd));
+    }
+//   item=[self.fetchedResultController objectAtIndexPath:indexPath]?
+    NSManagedObjectID *itemId=[[self.fetchedResultController objectAtIndexPath:indexPath] objectID];
+    Item *item=(Item*)[self.fetchedResultController.managedObjectContext existingObjectWithID:itemId error:nil];
+    if ([item.listed boolValue]) {
+        item.listed=[NSNumber numberWithBool:NO];
+    }else{
+        item.listed=[NSNumber numberWithBool:YES];
+        item.collected=[NSNumber numberWithBool:NO];
+    }
+    [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationNone];
+    
+}
+
 
 
 #pragma mark - DATA
@@ -85,6 +116,50 @@
     self.fetchedResultController.delegate=self;
 }
 
+#pragma mark - INTERACTION
+-(IBAction)clear:(id)sender{
+    if (debug==1) {
+        NSLog(@"Running %@,%@",self.class,NSStringFromSelector(_cmd));
+    }
+    CoreDataHelper *cdh=[(AppDelegate *)[[UIApplication sharedApplication]delegate]cdh];
+    NSFetchRequest *request=[cdh.model fetchRequestTemplateForName:@"ShoppingList"];
+    NSArray *shoppingList=[cdh.context executeFetchRequest:request error:nil];
+    
+    if (shoppingList.count>0) {
+        self.clearConfirmActionSheet=[[UIActionSheet alloc] initWithTitle:@"Clear Entire Shopping List?" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Clear" otherButtonTitles:nil];
+        [self.clearConfirmActionSheet showFromTabBar:self.navigationController.tabBarController.tabBar];
+    }else{
+        UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"Nothing to Clear" message:@"Add items to the Shop tab by tapping them on the prepare tab.Remove all items from the Shop tab by click Clear on the Prepare tab." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+    }
+    
+    
+    shoppingList=nil;
+}
 
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (actionSheet==self.clearConfirmActionSheet) {
+        if (buttonIndex==[actionSheet destructiveButtonIndex]) {
+            [self performSelector:@selector(clearList)];
+        }
+        else if (buttonIndex==[actionSheet cancelButtonIndex]){
+            [actionSheet dismissWithClickedButtonIndex:[actionSheet cancelButtonIndex] animated:YES];
+        }
+    }
+}
+
+-(void)clearList{
+    if (debug==1) {
+        NSLog(@"Running %@,%@",self.class,NSStringFromSelector(_cmd));
+    }
+
+    CoreDataHelper *cdh=[(AppDelegate*)[[UIApplication sharedApplication] delegate] cdh];
+    NSFetchRequest *request=[cdh.model fetchRequestTemplateForName:@"ShoppingList"];
+    NSArray *shoppingList=[cdh.context executeFetchRequest:request error:nil];
+    for (Item *item in shoppingList) {
+        item.listed=[NSNumber numberWithBool:NO];
+    }
+    
+}
 
 @end

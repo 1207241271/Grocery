@@ -26,7 +26,7 @@
             </objects>
             <point key="canvasLocation" x="-69" y="528"/>
         </scene>
-        <!--Prepare View Controller-->
+        <!--Items-->
         <scene sceneID="TmA-0A-Yw7">
             <objects>
                 <tableViewController id="4N2-zd-PUg" customClass="PrepareViewController" sceneMemberID="viewController">
@@ -36,7 +36,7 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Item Cell" id="PqD-CZ-eeQ">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="Item Cell" id="PqD-CZ-eeQ">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PqD-CZ-eeQ" id="AAI-in-pkF">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -50,7 +50,13 @@
                             <outlet property="delegate" destination="4N2-zd-PUg" id="vHW-mp-blJ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Jof-cZ-VDf"/>
+                    <navigationItem key="navigationItem" title="Items" id="Jof-cZ-VDf">
+                        <barButtonItem key="leftBarButtonItem" title="clear" id="CiT-Ge-Fiu">
+                            <connections>
+                                <action selector="clear:" destination="4N2-zd-PUg" id="g0g-Td-gWo"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1J0-Mz-9a0" userLabel="First Responder" sceneMemberID="firstResponder"/>
