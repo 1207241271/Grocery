@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CoreDataHelper.h"
-@interface UnitViewController : UIViewController
+@interface UnitViewController : UIViewController<UITextFieldDelegate>
 @property (strong, nonatomic) IBOutlet UITextField *nameTextField;
 @property (strong, nonatomic) NSManagedObjectID    *selectedObjectID;
 @end
