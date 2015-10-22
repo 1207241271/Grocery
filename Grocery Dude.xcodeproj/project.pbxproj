@@ -31,6 +31,8 @@
 		768836191BD759DC00890EBF /* ItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 768836181BD759DC00890EBF /* ItemViewController.m */; };
 		76A0180E1BD733C00027D0DC /* ShopTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76A0180D1BD733C00027D0DC /* ShopTableViewController.m */; };
 		76DDF9231BD4CD18004FA34D /* PrepareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76DDF9221BD4CD18004FA34D /* PrepareViewController.m */; };
+		76F0B9651BD9009200028D7B /* UnitTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76F0B9641BD9009200028D7B /* UnitTableViewController.m */; };
+		76F0B9681BD9074800028D7B /* UnitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76F0B9671BD9074800028D7B /* UnitViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +94,10 @@
 		76CC2C0C1BD330050076ACFA /* Model 5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 5.xcdatamodel"; sourceTree = "<group>"; };
 		76DDF9211BD4CD18004FA34D /* PrepareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrepareViewController.h; sourceTree = "<group>"; };
 		76DDF9221BD4CD18004FA34D /* PrepareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrepareViewController.m; sourceTree = "<group>"; };
+		76F0B9631BD9009200028D7B /* UnitTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnitTableViewController.h; sourceTree = "<group>"; };
+		76F0B9641BD9009200028D7B /* UnitTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnitTableViewController.m; sourceTree = "<group>"; };
+		76F0B9661BD9074800028D7B /* UnitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnitViewController.h; sourceTree = "<group>"; };
+		76F0B9671BD9074800028D7B /* UnitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnitViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +219,8 @@
 		7619874C1BD232D000320CCC /* Grocery Dude View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				76F0B9661BD9074800028D7B /* UnitViewController.h */,
+				76F0B9671BD9074800028D7B /* UnitViewController.m */,
 				7619874D1BD2331100320CCC /* MigrationViewController.h */,
 				7619874E1BD2331100320CCC /* MigrationViewController.m */,
 				768836171BD759DC00890EBF /* ItemViewController.h */,
@@ -233,6 +241,8 @@
 		76DDF9201BD4CCD0004FA34D /* Grocery Dude TableView Controller */ = {
 			isa = PBXGroup;
 			children = (
+				76F0B9631BD9009200028D7B /* UnitTableViewController.h */,
+				76F0B9641BD9009200028D7B /* UnitTableViewController.m */,
 				76A0180C1BD733C00027D0DC /* ShopTableViewController.h */,
 				76A0180D1BD733C00027D0DC /* ShopTableViewController.m */,
 				76DDF9211BD4CD18004FA34D /* PrepareViewController.h */,
@@ -353,6 +363,8 @@
 				7619872D1BD228EC00320CCC /* CoreDataHelper.m in Sources */,
 				766477091BD278B4004B9492 /* Model2ToModel4.xcmappingmodel in Sources */,
 				761987081BD2281700320CCC /* main.m in Sources */,
+				76F0B9681BD9074800028D7B /* UnitViewController.m in Sources */,
+				76F0B9651BD9009200028D7B /* UnitTableViewController.m in Sources */,
 				761987451BD22C0B00320CCC /* Measurement.m in Sources */,
 				7619873E1BD22A0D00320CCC /* AppDelegate.m in Sources */,
 				76A0180E1BD733C00027D0DC /* ShopTableViewController.m in Sources */,
