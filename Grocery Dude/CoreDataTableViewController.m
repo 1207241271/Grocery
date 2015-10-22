@@ -41,7 +41,7 @@
         }];
     }
     else{
-        NSLog(@"fetchedResultControoller is nil");
+        NSLog(@"fetchedResultController is nil");
     }
 }
 
