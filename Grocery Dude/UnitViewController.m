@@ -52,6 +52,7 @@
     Unit *unit=(Unit*)[cdh.context existingObjectWithID:self.selectedObjectID error:nil];
     if (textField==self.nameTextField) {
         unit.name=self.nameTextField.text;
+        NSLog(@"%@",self.nameTextField.text);
         [[NSNotificationCenter defaultCenter] postNotificationName:@"SomethingChanged" object:nil];
     }
     
@@ -62,8 +63,8 @@
     if (debug==1) {
         NSLog(@"%@ is running :%@",self.class,NSStringFromSelector(_cmd));
     }
-    [self hideKeyboardWhenBackgroundIsTapped];
-    [self popoverPresentationController];
+    [self hideKeyboard];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 -(void)hideKeyboardWhenBackgroundIsTapped{
@@ -79,7 +80,7 @@
     if (debug==1) {
         NSLog(@"%@ is running :%@",self.class,NSStringFromSelector(_cmd));
     }
-    [self.view endEditing:YES];
+    [self.nameTextField endEditing:YES];
 }
 
 @end

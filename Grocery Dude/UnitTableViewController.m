@@ -10,7 +10,7 @@
 #import "CoreDataHelper.h"
 #import "AppDelegate.h"
 #import "Unit.h"
-
+#import "UnitViewController.h"
 
 @interface UnitTableViewController ()
 
@@ -27,7 +27,7 @@
     
     
     CoreDataHelper *cdh=[(AppDelegate*)[[UIApplication sharedApplication]delegate] cdh];
-    NSFetchRequest *request=[[cdh.model fetchRequestTemplateForName:@"Unit"] copy];
+    NSFetchRequest *request=[NSFetchRequest fetchRequestWithEntityName:@"Unit"];
     request.sortDescriptors=[NSArray arrayWithObjects:[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES],nil];
     [request setFetchBatchSize:50];
     
@@ -81,9 +81,28 @@
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if (debug==1) {
+        NSLog(@"%@ is running :%@",self.class,NSStringFromSelector(_cmd));
+    }
     
-    
-    
+    UnitViewController *unitViewController=segue.destinationViewController;
+    if ([segue.identifier isEqualToString:@"Add Object Segue"]) {
+        
+        CoreDataHelper *cdh=[(AppDelegate*)[[UIApplication sharedApplication] delegate] cdh];
+        Unit *newUnit=[NSEntityDescription insertNewObjectForEntityForName:@"Unit" inManagedObjectContext:cdh.context];
+        NSError *error;
+        if (![cdh.context obtainPermanentIDsForObjects:[NSArray arrayWithObject:newUnit] error:&error]) {
+            NSLog(@"Couldn't obtain a permanent ID error:%@",error);
+        }
+        unitViewController.selectedObjectID=newUnit.objectID;
+    }
+    else if ([segue.identifier isEqualToString:@"Edit Object Segue"]) {
+        NSIndexPath *indexPath=[self.tableView indexPathForSelectedRow];
+        unitViewController.selectedObjectID=[[self.fetchedResultController objectAtIndexPath:indexPath] objectID];
+    }
+    else{
+        NSLog(@"Unidentified Segue Attempted");
+    }
     
 }
 
