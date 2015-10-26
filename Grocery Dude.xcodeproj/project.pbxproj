@@ -35,6 +35,7 @@
 		768836191BD759DC00890EBF /* ItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 768836181BD759DC00890EBF /* ItemViewController.m */; };
 		76A0180E1BD733C00027D0DC /* ShopTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76A0180D1BD733C00027D0DC /* ShopTableViewController.m */; };
 		76DDF9231BD4CD18004FA34D /* PrepareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76DDF9221BD4CD18004FA34D /* PrepareViewController.m */; };
+		76E495061BDE40870039FE0F /* CoreDataPickerTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 76E495051BDE40870039FE0F /* CoreDataPickerTextField.m */; };
 		76F0B9651BD9009200028D7B /* UnitTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76F0B9641BD9009200028D7B /* UnitTableViewController.m */; };
 		76F0B9681BD9074800028D7B /* UnitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76F0B9671BD9074800028D7B /* UnitViewController.m */; };
 /* End PBXBuildFile section */
@@ -106,6 +107,8 @@
 		76CC2C0C1BD330050076ACFA /* Model 5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 5.xcdatamodel"; sourceTree = "<group>"; };
 		76DDF9211BD4CD18004FA34D /* PrepareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrepareViewController.h; sourceTree = "<group>"; };
 		76DDF9221BD4CD18004FA34D /* PrepareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrepareViewController.m; sourceTree = "<group>"; };
+		76E495041BDE40870039FE0F /* CoreDataPickerTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataPickerTextField.h; sourceTree = "<group>"; };
+		76E495051BDE40870039FE0F /* CoreDataPickerTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataPickerTextField.m; sourceTree = "<group>"; };
 		76F0B9631BD9009200028D7B /* UnitTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnitTableViewController.h; sourceTree = "<group>"; };
 		76F0B9641BD9009200028D7B /* UnitTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnitTableViewController.m; sourceTree = "<group>"; };
 		76F0B9661BD9074800028D7B /* UnitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnitViewController.h; sourceTree = "<group>"; };
@@ -248,6 +251,8 @@
 		7666206B1BD4B578001130C9 /* Generic Core Data Classes */ = {
 			isa = PBXGroup;
 			children = (
+				76E495041BDE40870039FE0F /* CoreDataPickerTextField.h */,
+				76E495051BDE40870039FE0F /* CoreDataPickerTextField.m */,
 				7666206C1BD4B5E0001130C9 /* CoreDataTableViewController.h */,
 				7666206D1BD4B5E0001130C9 /* CoreDataTableViewController.m */,
 			);
@@ -372,6 +377,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				766620651BD4AF34001130C9 /* Unit.m in Sources */,
+				76E495061BDE40870039FE0F /* CoreDataPickerTextField.m in Sources */,
 				7619873B1BD229D900320CCC /* ViewController.m in Sources */,
 				7666206E1BD4B5E0001130C9 /* CoreDataTableViewController.m in Sources */,
 				766620661BD4AF34001130C9 /* LocationAtShop.m in Sources */,
