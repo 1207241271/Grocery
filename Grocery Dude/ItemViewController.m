@@ -8,7 +8,8 @@
 
 #import "ItemViewController.h"
 #import "AppDelegate.h"
-
+#import "LocationAtShop.h"
+#import "LocationAtHome.h"
 @interface ItemViewController ()
 
 @end
@@ -110,8 +111,8 @@
         NSLog(@"%@ is runnging ,info:%@",self.class,NSStringFromSelector(_cmd));
     }
     
-    [self ensureItemHomeLocationIsNOtNull];
-    [self ensureItemShopLocationIsNOtNull];
+    [self ensureItemHomeLocationIsNotNull];
+    [self ensureItemShopLocationIsNotNull];
     [self refreshInterface];
     if ([self.nameTextField.text isEqualToString:@"New Item"]) {
         self.nameTextField.text=@"";
@@ -123,14 +124,14 @@
     if (debug==1) {
         NSLog(@"%@ is runnging ,info:%@",self.class,NSStringFromSelector(_cmd));
     }
-    [self ensureItemHomeLocationIsNOtNull];
-    [self ensureItemShopLocationIsNOtNull];
+    [self ensureItemHomeLocationIsNotNull];
+    [self ensureItemShopLocationIsNotNull];
     CoreDataHelper *cdh=[(AppDelegate*)[[UIApplication sharedApplication] delegate] cdh];
     [cdh saveContext];
 }
 
 #pragma mark - DATA
--(void)ensureItemHomeLocationIsNOtNull{
+-(void)ensureItemHomeLocationIsNotNull{
     if (debug==1) {
         NSLog(@"%@ is runnging ,info:%@",self.class,NSStringFromSelector(_cmd));
     }
@@ -152,7 +153,7 @@
                 if (![cdh.context obtainPermanentIDsForObjects:[NSArray arrayWithObject:locationAtHome] error:&error]) {
                     NSLog(@"Couldn't obtain a permanent ID for object error:%@",error);
                 }
-                locationAtHome.storeIn=@"..UnkownLocation..";
+                locationAtHome.storeIn=@"..UnkownLocationHome..";
                 item.locationAtHome=locationAtHome;
             }
             
@@ -162,7 +163,7 @@
     }
 }
 
--(void)ensureItemShopLocationIsNOtNull{
+-(void)ensureItemShopLocationIsNotNull{
     if (debug==1) {
         NSLog(@"%@ is runnging ,info:%@",self.class,NSStringFromSelector(_cmd));
     }
@@ -175,6 +176,13 @@
             NSFetchRequest *request=[cdh.model fetchRequestTemplateForName:@"UnkownLocationAtShop"];
             NSArray *fetchedObject=[cdh.context executeFetchRequest:request error:nil];
             
+            NSFetchRequest *requsetForShop=[NSFetchRequest fetchRequestWithEntityName:@"LocationAtShop"];
+            NSArray *shops=[cdh.context executeFetchRequest:requsetForShop error:nil];
+            for (LocationAtShop *shop in shops) {
+                NSLog(@"%@",shop.aisle);
+            }
+            
+            
             if (fetchedObject.count>0) {
                 item.locationAtShop=[fetchedObject objectAtIndex:0];
             }else{
@@ -184,7 +192,7 @@
                 if (![cdh.context obtainPermanentIDsForObjects:[NSArray arrayWithObject:locationAtShop] error:&error]) {
                     NSLog(@"Couldn't obtain a permanent ID for object error:%@",error);
                 }
-                locationAtShop.aisle=@"..UnkownLocation..";
+                locationAtShop.aisle=@"..UnkownLocationShop..";
                 item.locationAtShop=locationAtShop;
             }
             

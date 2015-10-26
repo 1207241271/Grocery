@@ -103,8 +103,6 @@
     else{
         NSLog(@"Unidentified Segue Attempted");
     }
-    
-    
 }
 
 

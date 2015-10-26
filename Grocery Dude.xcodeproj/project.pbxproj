@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		761073231BDDE13C00BEAC96 /* LocationAtShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 761073221BDDE13C00BEAC96 /* LocationAtShopViewController.m */; };
+		761073261BDDE1CD00BEAC96 /* LocationAtShopTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 761073251BDDE1CD00BEAC96 /* LocationAtShopTableViewController.m */; };
 		761987081BD2281700320CCC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 761987071BD2281700320CCC /* main.m */; };
 		761987111BD2281700320CCC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7619870F1BD2281700320CCC /* Main.storyboard */; };
 		761987131BD2281800320CCC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 761987121BD2281800320CCC /* Images.xcassets */; };
@@ -49,6 +51,10 @@
 
 /* Begin PBXFileReference section */
 		760D67EF1BD4AD2200686AC7 /* Model 6.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 6.xcdatamodel"; sourceTree = "<group>"; };
+		761073211BDDE13C00BEAC96 /* LocationAtShopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationAtShopViewController.h; sourceTree = "<group>"; };
+		761073221BDDE13C00BEAC96 /* LocationAtShopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationAtShopViewController.m; sourceTree = "<group>"; };
+		761073241BDDE1CD00BEAC96 /* LocationAtShopTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationAtShopTableViewController.h; sourceTree = "<group>"; };
+		761073251BDDE1CD00BEAC96 /* LocationAtShopTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationAtShopTableViewController.m; sourceTree = "<group>"; };
 		761987021BD2281700320CCC /* Grocery Dude.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Grocery Dude.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		761987061BD2281700320CCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		761987071BD2281700320CCC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -225,6 +231,8 @@
 		7619874C1BD232D000320CCC /* Grocery Dude View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				761073211BDDE13C00BEAC96 /* LocationAtShopViewController.h */,
+				761073221BDDE13C00BEAC96 /* LocationAtShopViewController.m */,
 				767BAD9A1BDC9D770066354C /* LocationAtHomeViewController.h */,
 				767BAD9B1BDC9D770066354C /* LocationAtHomeViewController.m */,
 				76F0B9661BD9074800028D7B /* UnitViewController.h */,
@@ -249,6 +257,8 @@
 		76DDF9201BD4CCD0004FA34D /* Grocery Dude TableView Controller */ = {
 			isa = PBXGroup;
 			children = (
+				761073241BDDE1CD00BEAC96 /* LocationAtShopTableViewController.h */,
+				761073251BDDE1CD00BEAC96 /* LocationAtShopTableViewController.m */,
 				767BAD971BDC9BD00066354C /* LocationAtHomeTableViewController.h */,
 				767BAD981BDC9BD00066354C /* LocationAtHomeTableViewController.m */,
 				76F0B9631BD9009200028D7B /* UnitTableViewController.h */,
@@ -375,12 +385,14 @@
 				761987081BD2281700320CCC /* main.m in Sources */,
 				767BAD991BDC9BD00066354C /* LocationAtHomeTableViewController.m in Sources */,
 				76F0B9681BD9074800028D7B /* UnitViewController.m in Sources */,
+				761073231BDDE13C00BEAC96 /* LocationAtShopViewController.m in Sources */,
 				76F0B9651BD9009200028D7B /* UnitTableViewController.m in Sources */,
 				767BAD9C1BDC9D770066354C /* LocationAtHomeViewController.m in Sources */,
 				761987451BD22C0B00320CCC /* Measurement.m in Sources */,
 				7619873E1BD22A0D00320CCC /* AppDelegate.m in Sources */,
 				76A0180E1BD733C00027D0DC /* ShopTableViewController.m in Sources */,
 				761987481BD22C3900320CCC /* Amount.m in Sources */,
+				761073261BDDE1CD00BEAC96 /* LocationAtShopTableViewController.m in Sources */,
 				7619874A1BD22C6500320CCC /* Model.xcmappingmodel in Sources */,
 				768836191BD759DC00890EBF /* ItemViewController.m in Sources */,
 				766620641BD4AF34001130C9 /* Item.m in Sources */,
