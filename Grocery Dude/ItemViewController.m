@@ -104,6 +104,11 @@
     [self hideKeyboardWhenBackgroundIsTapped];
     self.nameTextField.delegate=self;
     self.quantityTextField.delegate=self;
+    
+    self.unitPickerTextField.delegate=self;
+    
+    
+    self.unitPickerTextField.pickerDelegate=self;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -197,9 +202,12 @@
             }
             
         }
-        
-        
     }
 }
+
+#pragma mark - PICKER
+-(void)
+
+
 
 @end

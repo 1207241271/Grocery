@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		761073231BDDE13C00BEAC96 /* LocationAtShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 761073221BDDE13C00BEAC96 /* LocationAtShopViewController.m */; };
 		761073261BDDE1CD00BEAC96 /* LocationAtShopTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 761073251BDDE1CD00BEAC96 /* LocationAtShopTableViewController.m */; };
+		7618C8F11BDF6F0D00F826FA /* UnitPickerTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 7618C8F01BDF6F0D00F826FA /* UnitPickerTextField.m */; };
 		761987081BD2281700320CCC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 761987071BD2281700320CCC /* main.m */; };
 		761987111BD2281700320CCC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7619870F1BD2281700320CCC /* Main.storyboard */; };
 		761987131BD2281800320CCC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 761987121BD2281800320CCC /* Images.xcassets */; };
@@ -56,6 +57,8 @@
 		761073221BDDE13C00BEAC96 /* LocationAtShopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationAtShopViewController.m; sourceTree = "<group>"; };
 		761073241BDDE1CD00BEAC96 /* LocationAtShopTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationAtShopTableViewController.h; sourceTree = "<group>"; };
 		761073251BDDE1CD00BEAC96 /* LocationAtShopTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationAtShopTableViewController.m; sourceTree = "<group>"; };
+		7618C8EF1BDF6F0D00F826FA /* UnitPickerTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnitPickerTextField.h; sourceTree = "<group>"; };
+		7618C8F01BDF6F0D00F826FA /* UnitPickerTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnitPickerTextField.m; sourceTree = "<group>"; };
 		761987021BD2281700320CCC /* Grocery Dude.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Grocery Dude.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		761987061BD2281700320CCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		761987071BD2281700320CCC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -156,6 +159,7 @@
 			children = (
 				7619874B1BD232B900320CCC /* Model */,
 				7666206B1BD4B578001130C9 /* Generic Core Data Classes */,
+				76DD18F91BDF6DC80073FFDF /* Grocery Dude Picker Text Fields */,
 				7619874C1BD232D000320CCC /* Grocery Dude View Controllers */,
 				76DDF9201BD4CCD0004FA34D /* Grocery Dude TableView Controller */,
 				7619872E1BD228F900320CCC /* CoreDataHelper */,
@@ -257,6 +261,15 @@
 				7666206D1BD4B5E0001130C9 /* CoreDataTableViewController.m */,
 			);
 			name = "Generic Core Data Classes";
+			sourceTree = "<group>";
+		};
+		76DD18F91BDF6DC80073FFDF /* Grocery Dude Picker Text Fields */ = {
+			isa = PBXGroup;
+			children = (
+				7618C8EF1BDF6F0D00F826FA /* UnitPickerTextField.h */,
+				7618C8F01BDF6F0D00F826FA /* UnitPickerTextField.m */,
+			);
+			name = "Grocery Dude Picker Text Fields";
 			sourceTree = "<group>";
 		};
 		76DDF9201BD4CCD0004FA34D /* Grocery Dude TableView Controller */ = {
@@ -391,6 +404,7 @@
 				761987081BD2281700320CCC /* main.m in Sources */,
 				767BAD991BDC9BD00066354C /* LocationAtHomeTableViewController.m in Sources */,
 				76F0B9681BD9074800028D7B /* UnitViewController.m in Sources */,
+				7618C8F11BDF6F0D00F826FA /* UnitPickerTextField.m in Sources */,
 				761073231BDDE13C00BEAC96 /* LocationAtShopViewController.m in Sources */,
 				76F0B9651BD9009200028D7B /* UnitTableViewController.m in Sources */,
 				767BAD9C1BDC9D770066354C /* LocationAtHomeViewController.m in Sources */,

@@ -106,7 +106,7 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="decimalPad"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lps-V2-coz">
-                                        <rect key="frame" x="249" y="117" width="48" height="48"/>
+                                        <rect key="frame" x="249" y="99" width="48" height="48"/>
                                         <animations/>
                                         <state key="normal" image="add_units">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -116,7 +116,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9wc-S0-AOQ">
-                                        <rect key="frame" x="249" y="181" width="48" height="48"/>
+                                        <rect key="frame" x="249" y="170" width="48" height="48"/>
                                         <animations/>
                                         <state key="normal" image="add_homelocations"/>
                                         <connections>
@@ -124,7 +124,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pmW-b6-6yv">
-                                        <rect key="frame" x="249" y="243" width="48" height="48"/>
+                                        <rect key="frame" x="249" y="238" width="48" height="48"/>
                                         <animations/>
                                         <state key="normal" image="add_shoplocations">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -133,6 +133,13 @@
                                             <segue destination="CCu-ls-4Q2" kind="modal" id="Z82-LQ-PGf"/>
                                         </connections>
                                     </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Unit" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LmH-SW-Rxa" customClass="UnitPickerTextField">
+                                        <rect key="frame" x="106" y="99" width="119" height="48"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                 </subviews>
                                 <animations/>
                                 <constraints>
@@ -168,6 +175,7 @@
                         <outlet property="nameTextField" destination="LUl-rR-Qa5" id="q3T-Zq-tgA"/>
                         <outlet property="quantityTextField" destination="WnO-8h-VwX" id="2Db-oG-2a7"/>
                         <outlet property="srollView" destination="Mv3-2M-5PV" id="a0o-Fc-zuY"/>
+                        <outlet property="unitPickerTextField" destination="LmH-SW-Rxa" id="bom-U3-MGO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FbL-vM-hW3" userLabel="First Responder" sceneMemberID="firstResponder"/>
