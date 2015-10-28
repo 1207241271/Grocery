@@ -23,6 +23,8 @@
 		761987481BD22C3900320CCC /* Amount.m in Sources */ = {isa = PBXBuildFile; fileRef = 761987461BD22C3900320CCC /* Amount.m */; };
 		7619874A1BD22C6500320CCC /* Model.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 761987491BD22C6500320CCC /* Model.xcmappingmodel */; };
 		7619874F1BD2331100320CCC /* MigrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7619874E1BD2331100320CCC /* MigrationViewController.m */; };
+		764967F91BE05602001D202F /* LocationAtHomePickerTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 764967F81BE05602001D202F /* LocationAtHomePickerTextField.m */; };
+		764967FC1BE06650001D202F /* LocationAtShopPickerTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 764967FB1BE06650001D202F /* LocationAtShopPickerTextField.m */; };
 		766477091BD278B4004B9492 /* Model2ToModel4.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 766477081BD278B4004B9492 /* Model2ToModel4.xcmappingmodel */; };
 		766620641BD4AF34001130C9 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 7666205B1BD4AF34001130C9 /* Item.m */; };
 		766620651BD4AF34001130C9 /* Unit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7666205D1BD4AF34001130C9 /* Unit.m */; };
@@ -84,6 +86,10 @@
 		761987491BD22C6500320CCC /* Model.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = Model.xcmappingmodel; sourceTree = "<group>"; };
 		7619874D1BD2331100320CCC /* MigrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MigrationViewController.h; sourceTree = "<group>"; };
 		7619874E1BD2331100320CCC /* MigrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MigrationViewController.m; sourceTree = "<group>"; };
+		764967F71BE05602001D202F /* LocationAtHomePickerTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationAtHomePickerTextField.h; sourceTree = "<group>"; };
+		764967F81BE05602001D202F /* LocationAtHomePickerTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationAtHomePickerTextField.m; sourceTree = "<group>"; };
+		764967FA1BE06650001D202F /* LocationAtShopPickerTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationAtShopPickerTextField.h; sourceTree = "<group>"; };
+		764967FB1BE06650001D202F /* LocationAtShopPickerTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationAtShopPickerTextField.m; sourceTree = "<group>"; };
 		766477081BD278B4004B9492 /* Model2ToModel4.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = Model2ToModel4.xcmappingmodel; sourceTree = "<group>"; };
 		7666205A1BD4AF34001130C9 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
 		7666205B1BD4AF34001130C9 /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
@@ -268,6 +274,10 @@
 			children = (
 				7618C8EF1BDF6F0D00F826FA /* UnitPickerTextField.h */,
 				7618C8F01BDF6F0D00F826FA /* UnitPickerTextField.m */,
+				764967F71BE05602001D202F /* LocationAtHomePickerTextField.h */,
+				764967F81BE05602001D202F /* LocationAtHomePickerTextField.m */,
+				764967FA1BE06650001D202F /* LocationAtShopPickerTextField.h */,
+				764967FB1BE06650001D202F /* LocationAtShopPickerTextField.m */,
 			);
 			name = "Grocery Dude Picker Text Fields";
 			sourceTree = "<group>";
@@ -414,7 +424,9 @@
 				761987481BD22C3900320CCC /* Amount.m in Sources */,
 				761073261BDDE1CD00BEAC96 /* LocationAtShopTableViewController.m in Sources */,
 				7619874A1BD22C6500320CCC /* Model.xcmappingmodel in Sources */,
+				764967F91BE05602001D202F /* LocationAtHomePickerTextField.m in Sources */,
 				768836191BD759DC00890EBF /* ItemViewController.m in Sources */,
+				764967FC1BE06650001D202F /* LocationAtShopPickerTextField.m in Sources */,
 				766620641BD4AF34001130C9 /* Item.m in Sources */,
 				7619874F1BD2331100320CCC /* MigrationViewController.m in Sources */,
 			);

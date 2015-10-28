@@ -9,6 +9,7 @@
 #import "ItemViewController.h"
 #import "AppDelegate.h"
 #import "LocationAtShop.h"
+
 #import "LocationAtHome.h"
 @interface ItemViewController ()
 
@@ -57,6 +58,20 @@
             self.nameTextField.text=@"";
         }
     }
+    
+    if (textField==self.unitPickerTextField) {
+        [_unitPickerTextField fetch];
+        [_unitPickerTextField.picker reloadAllComponents];
+    }
+    
+    if (textField==self.locationAtHomePickerTextField) {
+        [_locationAtHomePickerTextField fetch];
+        [_locationAtHomePickerTextField.picker reloadAllComponents];
+    }
+    if (textField==self.locationAtShopPickerTextField) {
+        [_locationAtShopPickerTextField fetch];
+        [_locationAtShopPickerTextField.picker reloadAllComponents];
+    }
 }
 
 -(void)textFieldDidEndEditing:(UITextField *)textField{
@@ -92,6 +107,13 @@
         Item *item=(Item*)[cdh.context existingObjectWithID:self.selectedItemID error:nil];
         self.nameTextField.text=item.name;
         self.quantityTextField.text=item.quantity.stringValue;
+        
+        self.unitPickerTextField.text=item.unit.name;
+        self.unitPickerTextField.selectedObjectID=item.unit.objectID;
+        self.locationAtHomePickerTextField.text=item.locationAtHome.storeIn;
+        self.locationAtHomePickerTextField.selectedObjectID=item.locationAtHome.objectID;
+        self.locationAtShopPickerTextField.text=item.locationAtShop.aisle;
+        self.locationAtShopPickerTextField.selectedObjectID=item.locationAtShop.objectID;
     }
 }
 
@@ -106,9 +128,12 @@
     self.quantityTextField.delegate=self;
     
     self.unitPickerTextField.delegate=self;
-    
+    self.locationAtHomePickerTextField.delegate=self;
+    self.locationAtShopPickerTextField.delegate=self;
     
     self.unitPickerTextField.pickerDelegate=self;
+    self.locationAtHomePickerTextField.pickerDelegate=self;
+    self.locationAtShopPickerTextField.pickerDelegate=self;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -206,8 +231,67 @@
 }
 
 #pragma mark - PICKER
--(void)
+-(void)selectedObjectID:(NSManagedObjectID *)objectID changedPickerTextField:(CoreDataPickerTextField *)pickerTextField{
+    if (debug==1) {
+        NSLog(@"%@ is runnging ,info:%@",self.class,NSStringFromSelector(_cmd));
+    }
+    
+    if (self.selectedItemID) {
+        CoreDataHelper *cdh=[(AppDelegate *)[[UIApplication sharedApplication] delegate] cdh];
+        
+        Item *item=(Item *)[cdh.context existingObjectWithID:self.selectedItemID error:nil];
+        
+        NSError *error;
+        if (pickerTextField==self.unitPickerTextField) {
+            item.unit=(Unit *)[cdh.context existingObjectWithID:objectID error:&error];
+            
+            self.unitPickerTextField.text=item.unit.name;
+        }else if (pickerTextField==self.locationAtHomePickerTextField){
+            item.locationAtHome=(LocationAtHome *)[cdh.context existingObjectWithID:objectID error:&error];
+            
+            self.locationAtHomePickerTextField.text=item.locationAtHome.storeIn;
+        }else if (pickerTextField==self.locationAtShopPickerTextField){
+            item.locationAtShop=(LocationAtShop *)[cdh.context existingObjectWithID:objectID error:&error];
+            self.locationAtShopPickerTextField.text=item.locationAtShop.aisle;
+        }
+        
+        
+        
+        [self refreshInterface];
+        
+        if (error) {
+            NSLog(@"Error selecting object on picker:%@ ,%@" ,pickerTextField,error);
+        }
+        
+    }
+    
+    
+    
+}
 
 
+-(void)selectedObjectClearedForPickerTextField:(CoreDataPickerTextField *)pickerTextField{
+    if (debug==1) {
+        NSLog(@"%@ is runnging ,info:%@",self.class,NSStringFromSelector(_cmd));
+    }
+    
+    if (self.selectedItemID) {
+        CoreDataHelper *cdh=[(AppDelegate *)[[UIApplication sharedApplication] delegate] cdh];
+        Item *item=(Item *)[cdh.context existingObjectWithID:self.selectedItemID error:nil];
+        if (pickerTextField==self.unitPickerTextField) {
+            item.unit=nil;
+            self.unitPickerTextField.text=@"";
+        }else if(pickerTextField==self.locationAtHomePickerTextField){
+            item.locationAtHome=nil;
+            self.locationAtHomePickerTextField.text=@"";
+        }else if(pickerTextField==self.locationAtShopPickerTextField){
+            item.locationAtShop=nil;
+            self.locationAtShopPickerTextField.text=@"";
+        }
+        
+        
+    }
+    [self refreshInterface];
+}
 
 @end

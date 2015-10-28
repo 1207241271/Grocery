@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>B9734097-5063-4F8B-9593-436ED6D41048</string>
 	<key>IDESourceControlProjectName</key>
-	<string>Grocery Dude</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>77B275EC999AD5503060099746691D7A9AB5490D</key>
 		<string>https://github.com/1207241271/Grocery.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Grocery Dude.xcodeproj</string>
+	<string>Grocery Dude.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>77B275EC999AD5503060099746691D7A9AB5490D</key>

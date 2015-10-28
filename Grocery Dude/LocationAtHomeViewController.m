@@ -58,6 +58,7 @@
     if (textField==self.nameTextField) {
         locationAtHome.storeIn=self.nameTextField.text;
         NSLog(@"%@",self.nameTextField.text);
+        [cdh saveContext];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"SomethingChanged" object:nil];
     }
     

@@ -140,6 +140,20 @@
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="LocationAtHome" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sfI-lT-vj5" customClass="LocationAtHomePickerTextField">
+                                        <rect key="frame" x="26" y="170" width="199" height="48"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="LocationAtShop" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ayh-Ky-rgg" customClass="LocationAtShopPickerTextField">
+                                        <rect key="frame" x="26" y="238" width="199" height="48"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                 </subviews>
                                 <animations/>
                                 <constraints>
@@ -172,6 +186,8 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="locationAtHomePickerTextField" destination="sfI-lT-vj5" id="fPN-gP-JxR"/>
+                        <outlet property="locationAtShopPickerTextField" destination="ayh-Ky-rgg" id="0Ay-fQ-hwM"/>
                         <outlet property="nameTextField" destination="LUl-rR-Qa5" id="q3T-Zq-tgA"/>
                         <outlet property="quantityTextField" destination="WnO-8h-VwX" id="2Db-oG-2a7"/>
                         <outlet property="srollView" destination="Mv3-2M-5PV" id="a0o-Fc-zuY"/>

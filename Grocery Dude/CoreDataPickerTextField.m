@@ -149,7 +149,7 @@
     }
     if (self=[super initWithCoder:aDecoder]) {
         self.inputView=[self createInputView];
-        self.inputAccessoryView=[self inputAccessoryView];
+        self.inputAccessoryView=[self createInputAccessoryView];
     }
     return self;
 }

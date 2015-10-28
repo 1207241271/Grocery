@@ -25,4 +25,5 @@
 @property (nonatomic, strong) NSManagedObjectID *selectedObjectID;
 @property (nonatomic) BOOL showToolbar;
 
+-(void)fetch;
 @end
